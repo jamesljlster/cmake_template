@@ -14,11 +14,11 @@ project(${PROJECT_NAME} ${PROJECT_LANGUAGE})
 include(${CMAKE_CURRENT_SOURCE_DIR}/deps/deps.cmake)
 
 # Include subdirectory
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
-if(${BUILD_TEST})
+#add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib)
+#include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
+#if(${BUILD_TEST})
 	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/test)
-endif()
+#endif()
 
 # Include utility cmake setting
-include(${CMAKE_CURRENT_SOURCE_DIR}/util/util.cmake)
+#include(${CMAKE_CURRENT_SOURCE_DIR}/util/util.cmake)
