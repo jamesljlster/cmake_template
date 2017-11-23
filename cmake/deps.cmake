@@ -1,6 +1,9 @@
 # Project Dependences Configuration
 
-# Set dependences paths
+# Set build type to release
+set(CMAKE_BUILD_TYPE Release)
+
+# Include subdirectories
 include_directories(${DEPS_PATHS})
 
 # Find other dependences
