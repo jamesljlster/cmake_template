@@ -7,18 +7,31 @@ set(PROJECT_NAME CMake_Template)
 set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "Installation directory")
 set(BUILD_TEST OFF CACHE BOOL "Enable building test")
 
+# Dependences paths
+set(DEPS_PATHS
+	${CMAKE_CURRENT_SOURCE_DIR}/deps/deps1
+	${CMAKE_CURRENT_SOURCE_DIR}/deps/deps2
+	)
+
+# Library paths
+set(LIB_PATHS
+	${CMAKE_CURRENT_SOURCE_DIR}/lib/
+	)
+
+# Utility paths
+set(UTIL_PATHS
+	${CMAKE_CURRENT_SOURCE_DIR}/util/util1
+	${CMAKE_CURRENT_SOURCE_DIR}/util/util2
+	)
+
+if(${BUILD_TEST})
+	set(UTIL_PATHS ${UTIL_PATHS} ${CMAKE_CURRENT_SOURCE_DIR}/test)
+endif()
+
 # Set project
 project(${PROJECT_NAME} ${PROJECT_LANGUAGE})
 
-# Include dependences cmake setting
-include(${CMAKE_CURRENT_SOURCE_DIR}/deps/deps.cmake)
-
-# Include subdirectory
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/lib)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib)
-if(${BUILD_TEST})
-	add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/test)
-endif()
-
-# Include utility cmake setting
-include(${CMAKE_CURRENT_SOURCE_DIR}/util/util.cmake)
+# Include cmake files
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/deps.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/lib.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/util.cmake)

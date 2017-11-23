@@ -1,8 +1,6 @@
+# Project Dependences Configuration
+
 # Set dependences paths
-set(DEPS_PATHS
-	${CMAKE_CURRENT_SOURCE_DIR}/deps/deps1
-	${CMAKE_CURRENT_SOURCE_DIR}/deps/deps2
-	)
 include_directories(${DEPS_PATHS})
 
 # Find other dependences
