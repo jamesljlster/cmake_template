@@ -8,6 +8,14 @@ set(PROJECT_LANGUAGE C CXX)
 set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "Installation directory")
 set(BUILD_TEST OFF CACHE BOOL "Enable building test")
 
+set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Build confugure" FORCE)
+if(DEFINED CMAKE_BUILD_TYPE)
+	set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS ${CMAKE_CONFIGURATION_TYPES})
+endif()
+if(NOT CMAKE_BUILD_TYPE)
+	set(CMAKE_BUILD_TYPE Release)
+endif()
+
 # Dependences paths
 set(DEPS_PATHS
 	${CMAKE_CURRENT_SOURCE_DIR}/deps/deps1
@@ -36,3 +44,4 @@ project(${PROJECT_NAME} ${PROJECT_LANGUAGE})
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/deps.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/lib.cmake)
 include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/util.cmake)
+
