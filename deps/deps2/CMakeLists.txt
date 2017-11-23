@@ -18,8 +18,6 @@ if(NOT CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE Release)
 endif()
 
-message("${PROJECT_NAME} Build Type: ${CMAKE_BUILD_TYPE}")
-
 # Set project
 project(${PROJECT_NAME} ${PROJECT_LANGUAGE})
 
