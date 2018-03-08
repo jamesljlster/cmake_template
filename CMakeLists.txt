@@ -1,5 +1,13 @@
 cmake_minimum_required(VERSION 2.8)
 
+# Disable in-source builds to prevent source tree corruption.
+if(" ${CMAKE_SOURCE_DIR}" STREQUAL " ${CMAKE_BINARY_DIR}")
+  message(FATAL_ERROR "
+FATAL: In-source builds are not allowed.
+       You should create a separate directory for build files.
+")
+endif()
+
 # Set variables
 set(PROJECT_NAME CMake_Template)
 set(PROJECT_LANGUAGE C CXX)
