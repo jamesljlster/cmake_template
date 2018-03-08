@@ -8,6 +8,8 @@ set(PROJECT_DEPS deps2 demo)
 # Compile setting
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
 set(CMAKE_C_FLAGS_RELEASE "-O3")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 # Set default build type
 if(NOT CMAKE_BUILD_TYPE)
