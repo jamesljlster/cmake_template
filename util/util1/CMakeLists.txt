@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 # Set variables
 set(PROJECT_NAME util1)
-set(PROJECT_LANGUAGE C CXX)
+set(PROJECT_LANGUAGE C)
 set(PROJECT_DEPS deps1 demo)
 
 # Compile setting
