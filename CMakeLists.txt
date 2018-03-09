@@ -24,6 +24,9 @@ if(NOT CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE Release)
 endif()
 
+# Let ycm can catch compile commands.
+set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+
 # Dependences paths
 set(DEPS_PATHS
 	${CMAKE_CURRENT_SOURCE_DIR}/deps/deps1
