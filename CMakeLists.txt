@@ -2,10 +2,9 @@ cmake_minimum_required(VERSION 2.8)
 
 # Disable in-source builds to prevent source tree corruption.
 if(" ${CMAKE_SOURCE_DIR}" STREQUAL " ${CMAKE_BINARY_DIR}")
-  message(FATAL_ERROR "
-FATAL: In-source builds are not allowed.
-       You should create a separate directory for build files.
-")
+	message(FATAL_ERROR "\nFATAL: In-source builds are not allowed.\n"
+		"You should create a separate directory for build files."
+		)
 endif()
 
 # Set variables
@@ -14,7 +13,8 @@ set(PROJECT_LANGUAGE C CXX)
 
 # Environment variables
 set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "Installation directory")
-set(BUILD_TEST OFF CACHE BOOL "Enable building test")
+option(BUILD_TEST "Enable building test" OFF)
+option(BUILD_SHARED_LIBS "Build shared library" OFF)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Build configure" FORCE)
 if(DEFINED CMAKE_BUILD_TYPE)
