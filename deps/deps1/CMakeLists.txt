@@ -25,10 +25,9 @@ file(GLOB PROJECT_SRCS ${CMAKE_CURRENT_SOURCE_DIR}/*.c)
 
 # Build library
 add_library(${PROJECT_NAME} STATIC ${PROJECT_SRCS})
-set_target_properties(${PROJECT_NAME}
-	PROPERTIES
-	OUTPUT_NAME			${PROJECT_NAME}
-		PREFIX			"lib"
+set_target_properties(${PROJECT_NAME} PROPERTIES
+	OUTPUT_NAME ${PROJECT_NAME}
+	PREFIX "lib"
 	)
 
 # Install

@@ -33,8 +33,8 @@ file(GLOB PROJECT_SRCS
 
 # Build utility
 add_executable(${PROJECT_NAME} ${PROJECT_SRCS})
-set_target_properties(${PROJECT_NAME}
-	PROPERTIES OUTPUT_NAME ${PROJECT_NAME}
+set_target_properties(${PROJECT_NAME} PROPERTIES
+	OUTPUT_NAME ${PROJECT_NAME}
 	)
 target_link_libraries(${PROJECT_NAME} ${PROJECT_DEPS})
 

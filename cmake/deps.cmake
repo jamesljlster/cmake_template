@@ -1,8 +1,10 @@
 # Project Dependences Configuration
 
 # Backup and set build type to release
-set(CMAKE_BUILD_TYPE_BAK ${CMAKE_BUILD_TYPE})
-set(CMAKE_BUILD_TYPE Release)
+if(NOT MSVC)
+	set(CMAKE_BUILD_TYPE_BAK ${CMAKE_BUILD_TYPE})
+	set(CMAKE_BUILD_TYPE Release)
+endif()
 
 # Include subdirectories
 include_directories(${DEPS_PATHS})
@@ -14,8 +16,12 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
-find_package(Serialport REQUIRED)
+#find_package(Serialport REQUIRED)
+find_package(Serialport)
 include_directories(${SERIALPORT_INCLUDE_DIR})
+
+#find_package(Fuzzylite REQUIRED)
+find_package(Fuzzylite)
 
 # Add subdirectory
 foreach(DEPS_PATH ${DEPS_PATHS})
@@ -23,5 +29,7 @@ foreach(DEPS_PATH ${DEPS_PATHS})
 endforeach()
 
 # Restore origin build type
-set(CMAKE_BUILD_TYPE ${CMAKE_BUILD_TYPE_BAK})
+if(NOT MSVC)
+	set(CMAKE_BUILD_TYPE ${CMAKE_BUILD_TYPE_BAK})
+endif()
 
