@@ -10,7 +10,7 @@ find_path(SERIALPORT_INCLUDE_DIRS libserialport.h
 	"/usr/local/include"
 	)
 find_library(SERIALPORT_LIBRARIES libserialport.a
-    "/usr/lib"
+	"/usr/lib"
 	"/usr/local/lib"
 	)
 include(FindPackageHandleStandardArgs)
