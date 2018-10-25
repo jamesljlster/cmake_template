@@ -1,7 +1,7 @@
-image: gcc
-before_script:
-  - apt-get update --yes
-  - apt-get install --yes cmake
+#image: gcc
+#before_script:
+#  - apt-get update --yes
+#  - apt-get install --yes cmake
 
 build:
   stage: build
@@ -17,4 +17,4 @@ build:
 test:
   stage: test
   script:
-    - ./install/bin/test_demo
+    - ./build/install/bin/test_demo
