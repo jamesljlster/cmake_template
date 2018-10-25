@@ -14,4 +14,4 @@ build:
 test:
   stage: test
   script:
-    - ./build/install/bin/test_demo
+    - ./install/bin/test_demo
