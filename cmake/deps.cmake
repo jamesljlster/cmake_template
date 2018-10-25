@@ -11,7 +11,8 @@ include_directories(${DEPS_PATHS})
 
 # Find other dependences
 set(OpenCV_STATIC OFF CACHE BOOL "Using OpenCV static linking library")
-find_package(OpenCV REQUIRED)
+#find_package(OpenCV REQUIRED)
+find_package(OpenCV)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
