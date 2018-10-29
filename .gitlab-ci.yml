@@ -1,5 +1,5 @@
 # Use docker gcc official image with cmake installed
-image: e8035669/ical-build
+image: ical/source
 #before_script:
 #  - apt-get update --yes
 #  - apt-get install --yes cmake --allow-unauthenticated
