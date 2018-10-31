@@ -1,8 +1,23 @@
 # Use docker gcc official image with cmake installed
-image: gcc
+image:
+  name: ical/source:latest
+  entrypoint: ["/bin/bash"]
+
 before_script:
-  - apt-get update --yes
-  - apt-get install --yes cmake --allow-unauthenticated
+  - echo "Do these things before 'build' and 'test'."
+  - echo "before_script Done."
+
+after_script:
+  - echo "Do these things after 'build' and 'test'."
+  - echo "after_script Done."
+
+variables:
+  # Submodule behavier, reference to:
+  # http://140.127.205.188/help/ci/yaml/README#git-submodule-strategy
+  GIT_SUBMODULE_STRATEGY: normal
+  # Do a shallow clone, reference to:
+  # http://140.127.205.188/help/ci/yaml/README#shallow-cloning
+  GIT_DEPTH: "3"
 
 # Build task
 build:
@@ -28,3 +43,5 @@ test:
   # Run test
   script:
     - ./build/install/bin/test_demo
+
+# vim: set tabstop=2 shiftwidth=2 expandtab :
