@@ -19,7 +19,7 @@ set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 #find_package(Serialport REQUIRED)
 find_package(Serialport)
-include_directories(${SERIALPORT_INCLUDE_DIR})
+include_directories(${SERIALPORT_INCLUDE_DIRS})
 
 #find_package(Fuzzylite REQUIRED)
 find_package(Fuzzylite)
