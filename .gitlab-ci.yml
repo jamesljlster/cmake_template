@@ -1,10 +1,11 @@
-# Use docker gcc official image with cmake installed
+# Use docker image ical/source with lot's of develop library already builtin.
 image:
   name: ical/source:latest
   entrypoint: ["/bin/bash"]
 
 before_script:
   - echo "Do these things before 'build' and 'test'."
+  - git submodule update --init
   - echo "before_script Done."
 
 after_script:
@@ -14,7 +15,8 @@ after_script:
 variables:
   # Submodule behavier, reference to:
   # http://140.127.205.188/help/ci/yaml/README#git-submodule-strategy
-  GIT_SUBMODULE_STRATEGY: normal
+  # We should add 'git submodule update --init' in 'before_script' or CI may fail
+  #GIT_SUBMODULE_STRATEGY: normal
   # Do a shallow clone, reference to:
   # http://140.127.205.188/help/ci/yaml/README#shallow-cloning
   GIT_DEPTH: "3"
