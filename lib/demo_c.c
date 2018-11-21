@@ -4,8 +4,8 @@
 
 int demo_c()
 {
-	LOG("enter");
-	printf("demo_c()\n");
-	LOG("exit");
-	return 0;
+    LOG("enter");
+    printf("demo_c()\n");
+    LOG("exit");
+    return 0;
 }

@@ -6,16 +6,16 @@
 
 
 find_path(SERIALPORT_INCLUDE_DIRS libserialport.h
-	"/usr/include"
-	"/usr/local/include"
-	)
+    "/usr/include"
+    "/usr/local/include"
+    )
 find_library(SERIALPORT_LIBRARIES libserialport.a
-	"/usr/lib"
-	"/usr/local/lib"
-	)
+    "/usr/lib"
+    "/usr/local/lib"
+    )
 include(FindPackageHandleStandardArgs)
 
 find_package_handle_standard_args(Serialport
-	FOUND_VAR Serialport_FOUND
-	REQUIRED_VARS SERIALPORT_INCLUDE_DIRS SERIALPORT_LIBRARIES
-	)
+    FOUND_VAR Serialport_FOUND
+    REQUIRED_VARS SERIALPORT_INCLUDE_DIRS SERIALPORT_LIBRARIES
+    )

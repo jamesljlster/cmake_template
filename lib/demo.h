@@ -4,10 +4,11 @@
 int demo_cpp();
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-int demo_c();
+    int demo_c();
 
 #ifdef __cplusplus
 }

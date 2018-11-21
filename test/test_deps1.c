@@ -2,7 +2,7 @@
 
 int main()
 {
-	deps1();
+    deps1();
 
-	return 0;
+    return 0;
 }

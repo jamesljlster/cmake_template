@@ -2,10 +2,11 @@
 #define __DEPS1_H__
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-int deps1();
+    int deps1();
 
 #ifdef __cplusplus
 }

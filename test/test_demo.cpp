@@ -2,8 +2,8 @@
 
 int main()
 {
-	demo_c();
-	demo_cpp();
+    demo_c();
+    demo_cpp();
 
-	return 0;
+    return 0;
 }

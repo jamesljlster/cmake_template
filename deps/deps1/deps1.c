@@ -2,6 +2,6 @@
 
 int deps1()
 {
-	printf("deps1\n");
-	return 0;
+    printf("deps1\n");
+    return 0;
 }
