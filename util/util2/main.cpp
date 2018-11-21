@@ -1,10 +1,10 @@
-#include <deps2.h>
 #include <demo.h>
+#include <deps2.h>
 
 int main()
 {
-	demo_cpp();
-	deps2();
+    demo_cpp();
+    deps2();
 
-	return 0;
+    return 0;
 }
