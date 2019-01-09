@@ -23,6 +23,7 @@ include_directories(${SERIALPORT_INCLUDE_DIRS})
 
 #find_package(Fuzzylite REQUIRED)
 find_package(Fuzzylite)
+include_directories(${Fuzzylite_INCLUDE_DIRS})
 
 # Add subdirectory
 foreach(DEPS_PATH ${DEPS_PATHS})
