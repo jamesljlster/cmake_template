@@ -1,10 +1,7 @@
 #include <demo.h>
-#include <deps1.h>
 
 int main()
 {
-    demo_c();
-    deps1();
-
+    demo_cpp();
     return 0;
 }
