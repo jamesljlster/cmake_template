@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 
 # Set variables
-set(PROJECT_NAME demo_util)
+set(PROJECT_NAME demo_util)  # Set project name manually
+#get_filename_component(PROJECT_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)  # Set project name with dir name
 set(PROJECT_LANGUAGE C CXX)
 set(PROJECT_DEPS demo_lib)
 
