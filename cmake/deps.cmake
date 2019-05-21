@@ -1,14 +1,5 @@
 # Project Dependences Configuration
 
-# Backup and set build type to release
-if(NOT MSVC)
-    set(CMAKE_BUILD_TYPE_BAK ${CMAKE_BUILD_TYPE})
-    set(CMAKE_BUILD_TYPE Release)
-endif()
-
-# Include subdirectories
-include_directories(${DEPS_PATHS})
-
 # Find other dependences
 set(OpenCV_STATIC OFF CACHE BOOL "Using OpenCV static linking library")
 #find_package(OpenCV REQUIRED)
@@ -24,6 +15,15 @@ include_directories(${SERIALPORT_INCLUDE_DIRS})
 #find_package(Fuzzylite REQUIRED)
 find_package(Fuzzylite)
 include_directories(${Fuzzylite_INCLUDE_DIRS})
+
+# Include subdirectories
+include_directories(${DEPS_PATHS})
+
+# Backup and set build type to release
+if(NOT MSVC)
+    set(CMAKE_BUILD_TYPE_BAK ${CMAKE_BUILD_TYPE})
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
 # Add subdirectory
 foreach(DEPS_PATH ${DEPS_PATHS})
