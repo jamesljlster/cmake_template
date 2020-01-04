@@ -24,7 +24,7 @@ if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
 endif()
 
-# Let ycm can catch compile commands.
+# Export compile commands (For some useful tools like YCM, Sourcetrail, ...)
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 
 # Dependences paths
