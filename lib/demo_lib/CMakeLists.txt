@@ -1,10 +1,22 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.10)
 
-# Set variables
+# Set library name
 set(PROJECT_NAME demo_lib)  # Set project name manually
 #get_filename_component(PROJECT_NAME ${CMAKE_CURRENT_SOURCE_DIR} NAME)  # Set project name with dir name
+
+# Set programming language
 set(PROJECT_LANGUAGE C CXX)
+
+# Set library version
+set(LIB_VERSION_MAJOR 1)
+set(LIB_VERSION_MINOR 2)
+set(LIB_VERSION_PATCH 3)
+set(LIB_VERSION ${LIB_VERSION_MAJOR}.${LIB_VERSION_MINOR}.${LIB_VERSION_PATCH})
+
+# Set library public headers
 set(PROJECT_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/demo.h)
+
+# Set library dependencies
 set(PROJECT_DEPS gcc stdc++)
 
 # Compile setting
@@ -44,7 +56,8 @@ add_library(${PROJECT_NAME} ${PROJECT_SRCS})
 set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_STANDARD 11
     OUTPUT_NAME ${PROJECT_NAME}
-    PREFIX "lib"
+    VERSION "${LIB_VERSION}"
+    SOVERSION "${LIB_VERSION_MAJOR}.${LIB_VERSION_MINOR}"
     )
 
 if(${BUILD_SHARED_LIBS})
