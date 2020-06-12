@@ -78,6 +78,26 @@ install(TARGETS ${PROJECT_NAME} EXPORT ${LIB_TARGET}
     PUBLIC_HEADER DESTINATION "${INC_DIR}"
     )
 
-install(FILES ${PROJECT_HEADERS}
-    DESTINATION "${CMAKE_INSTALL_PREFIX}/include"
+install(FILES ${PROJECT_HEADERS} DESTINATION "${INC_DIR}")
+
+# Export package configuration
+include(CMakePackageConfigHelpers)
+
+set(LIB_CONFIG_FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-config.cmake")
+set(LIB_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-version.cmake")
+
+configure_package_config_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/config.cmake.in "${LIB_CONFIG_FILE}"
+    INSTALL_DESTINATION "${EXPORT_DIR}"
+    PATH_VARS INC_DIR
+    )
+
+write_basic_package_version_file(
+    "${LIB_VERSION_FILE}"
+    VERSION "${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
+    COMPATIBILITY SameMajorVersion
+)
+
+install(FILES ${LIB_CONFIG_FILE} ${LIB_VERSION_FILE}
+    DESTINATION "${EXPORT_DIR}"
     )
