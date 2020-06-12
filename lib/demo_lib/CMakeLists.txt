@@ -89,7 +89,7 @@ set(LIB_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-version.cmake"
 configure_package_config_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/config.cmake.in "${LIB_CONFIG_FILE}"
     INSTALL_DESTINATION "${EXPORT_DIR}"
-    PATH_VARS INC_DIR
+    PATH_VARS INC_DIR LIB_DIR
     )
 
 write_basic_package_version_file(
