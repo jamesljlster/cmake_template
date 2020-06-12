@@ -16,8 +16,8 @@ project(${PROJECT_NAME} ${PROJECT_LANGUAGE})
 
 # Set file list
 file(GLOB PROJECT_SRCS
-    ${CMAKE_CURRENT_SOURCE_DIR}/*.c
-    ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.c"
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
     )
 
 # Build test

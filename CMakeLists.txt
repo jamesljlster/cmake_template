@@ -40,28 +40,28 @@ endif("${isSystemDir}" STREQUAL "-1")
 
 # Dependences paths
 set(DEPS_PATHS
-    #${CMAKE_CURRENT_SOURCE_DIR}/deps/foo
+    #"${CMAKE_CURRENT_SOURCE_DIR}/deps/foo"
     )
 
 # Library paths
 set(LIB_PATHS
-    ${CMAKE_CURRENT_SOURCE_DIR}/lib/demo_lib
+    "${CMAKE_CURRENT_SOURCE_DIR}/lib/demo_lib"
     )
 
 # Utility paths
 set(UTIL_PATHS
-    ${CMAKE_CURRENT_SOURCE_DIR}/util/demo_util
+    "${CMAKE_CURRENT_SOURCE_DIR}/util/demo_util"
     )
 
 if(${BUILD_TEST})
-    set(UTIL_PATHS ${UTIL_PATHS} ${CMAKE_CURRENT_SOURCE_DIR}/test)
+    set(UTIL_PATHS ${UTIL_PATHS} "${CMAKE_CURRENT_SOURCE_DIR}/test")
 endif()
 
 # Set project
 project(${PROJECT_NAME} ${PROJECT_LANGUAGE})
 
 # Include cmake files
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/deps.cmake)
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/lib.cmake)
-include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/util.cmake)
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/deps.cmake")
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/lib.cmake")
+include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/util.cmake")
 
