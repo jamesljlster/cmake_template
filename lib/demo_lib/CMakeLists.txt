@@ -65,7 +65,7 @@ endif()
 set(BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin")
 set(LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib")
 set(INC_DIR "${CMAKE_INSTALL_PREFIX}/include")
-set(EXPORT_DIR "${LIB_DIR}/cmake")
+set(EXPORT_DIR "${LIB_DIR}/cmake/${PROJECT_NAME}")
 
 # Install
 set(LIB_TARGET ${PROJECT_NAME}-targets)
