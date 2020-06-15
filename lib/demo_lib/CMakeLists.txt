@@ -57,9 +57,12 @@ set(EXPORT_DIR "${CMAKE_INSTALL_PREFIX}/lib/cmake/${PROJECT_NAME}")
 # Setup RPATH for shared library loading
 if(DEFINED CMAKE_INSTALL_RPATH AND ${BUILD_SHARED_LIBS})
     if(NOT ${LIB_DIR} IN_LIST CMAKE_INSTALL_RPATH)
-        list(APPEND CMAKE_INSTALL_RPATH ${LIB_DIR})
-        set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_RPATH} CACHE INTERNAL
-            "RPATH for installation" FORCE)
+        list(FIND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES ${LIB_DIR} isSystemDir)
+        if("${isSystemDir}" STREQUAL "-1")
+            list(APPEND CMAKE_INSTALL_RPATH ${LIB_DIR})
+            set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_RPATH} CACHE INTERNAL
+                "RPATH for installation" FORCE)
+        endif()
     endif()
 endif()
 
