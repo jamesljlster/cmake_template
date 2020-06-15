@@ -48,6 +48,21 @@ file(GLOB PROJECT_SRCS
     "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
     )
 
+# Configure package install prefix
+set(BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin")
+set(LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME}")
+set(INC_DIR "${CMAKE_INSTALL_PREFIX}/include/${PROJECT_NAME}")
+set(EXPORT_DIR "${CMAKE_INSTALL_PREFIX}/lib/cmake/${PROJECT_NAME}")
+
+# Setup RPATH for shared library loading
+if(DEFINED CMAKE_INSTALL_RPATH AND ${BUILD_SHARED_LIBS})
+    if(NOT ${LIB_DIR} IN_LIST CMAKE_INSTALL_RPATH)
+        list(APPEND CMAKE_INSTALL_RPATH ${LIB_DIR})
+        set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_RPATH} CACHE INTERNAL
+            "RPATH for installation" FORCE)
+    endif()
+endif()
+
 # Build library
 add_library(${PROJECT_NAME} ${PROJECT_SRCS})
 set_target_properties(${PROJECT_NAME} PROPERTIES
@@ -60,12 +75,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 if(${BUILD_SHARED_LIBS})
     target_link_libraries(${PROJECT_NAME} ${PROJECT_DEPS})
 endif()
-
-# Configure package install prefix
-set(BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin")
-set(LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME}")
-set(INC_DIR "${CMAKE_INSTALL_PREFIX}/include/${PROJECT_NAME}")
-set(EXPORT_DIR "${CMAKE_INSTALL_PREFIX}/lib/cmake/${PROJECT_NAME}")
 
 # Install
 set(LIB_TARGET ${PROJECT_NAME}-targets)
