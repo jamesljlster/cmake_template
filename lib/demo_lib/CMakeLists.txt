@@ -63,9 +63,9 @@ endif()
 
 # Configure package install prefix
 set(BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin")
-set(LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib")
-set(INC_DIR "${CMAKE_INSTALL_PREFIX}/include")
-set(EXPORT_DIR "${LIB_DIR}/cmake/${PROJECT_NAME}")
+set(LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME}")
+set(INC_DIR "${CMAKE_INSTALL_PREFIX}/include/${PROJECT_NAME}")
+set(EXPORT_DIR "${CMAKE_INSTALL_PREFIX}/lib/cmake/${PROJECT_NAME}")
 
 # Install
 set(LIB_TARGET ${PROJECT_NAME}-targets)
