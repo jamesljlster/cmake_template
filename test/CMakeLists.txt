@@ -34,6 +34,6 @@ foreach(TEST_FILE_PATH ${PROJECT_SRCS})
     target_link_libraries(${TEST_FILE_NAME} ${PROJECT_DEPS})
 
     # Install
-    install(TARGETS ${TEST_FILE_NAME} DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")
+    install(TARGETS ${TEST_FILE_NAME} DESTINATION "bin")
 endforeach()
 

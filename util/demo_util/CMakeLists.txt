@@ -43,4 +43,4 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 target_link_libraries(${PROJECT_NAME} ${PROJECT_DEPS})
 
 # Install
-install(TARGETS ${PROJECT_NAME} DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")
+install(TARGETS ${PROJECT_NAME} DESTINATION "bin")

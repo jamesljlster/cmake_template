@@ -49,10 +49,10 @@ file(GLOB PROJECT_SRCS
     )
 
 # Configure package install prefix
-set(BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin")
-set(LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME}")
-set(INC_DIR "${CMAKE_INSTALL_PREFIX}/include/${PROJECT_NAME}")
-set(EXPORT_DIR "${CMAKE_INSTALL_PREFIX}/lib/cmake/${PROJECT_NAME}")
+set(BIN_DIR "bin")
+set(LIB_DIR "lib/${PROJECT_NAME}")
+set(INC_DIR "include/${PROJECT_NAME}")
+set(EXPORT_DIR "lib/cmake/${PROJECT_NAME}")
 
 # Setup RPATH for shared library loading
 if((DEFINED CMAKE_INSTALL_RPATH) AND (${BUILD_SHARED_LIBS}))
