@@ -9,10 +9,11 @@ endif()
 
 # Set variables
 set(PROJECT_NAME CMake_Template)
-set(PROJECT_LANGUAGE C CXX)
+set(PROJECT_LANGUAGE C CXX CUDA)
 
 # Environment variables
 set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/install" CACHE PATH "Installation directory")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 option(BUILD_TEST "Enable building test" OFF)
 option(BUILD_SHARED_LIBS "Build shared library" OFF)
 
@@ -56,6 +57,10 @@ endif()
 
 # Set project
 project(${PROJECT_NAME} ${PROJECT_LANGUAGE})
+
+# Resolve CUDA architectures
+include(CUDAHelper)
+resolve_cuda_architectures("COMMON" ARCH_MIN "52" CUDA_MIN "9.0")
 
 # Include cmake files
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/deps.cmake")
