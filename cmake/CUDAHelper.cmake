@@ -126,6 +126,7 @@ function(FIND_CUDA_ARCHITECTURES STRATEGY)
     set(CUDA_ARCH_11.3          35 37 50 52 53 60 61 62 70 72 75 80 86)
     set(CUDA_ARCH_11.4          35 37 50 52 53 60 61 62 70 72 75 80 86 87)
     set(CUDA_ARCH_11.5          35 37 50 52 53 60 61 62 70 72 75 80 86 87)
+    set(CUDA_ARCH_11.6          35 37 50 52 53 60 61 62 70 72 75 80 86 87)
 
     # Parse arguments
     set(OPT "VERBOSE")
